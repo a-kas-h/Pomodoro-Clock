@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Pomodoro Clock</h1>
+            <div class="tabs">
+                <div class="panel">
+                    <button class="tablinks active" id="work" value="25" onclick="changeTab(event,'workContent')">work</button>
+                    <button class="tablinks" id="short break" value="5" onclick="changeTab(event,'shortContent')">short break</button>
+                    <button class="tablinks" id="long break" value="15" onclick="changeTab(event,'longContent')">long break</button>
+                </div>
+            </div>
+            <div class="timer">
+                <div class="circle">
+                    <div id="workContent" class="tabcontent">
+                        <p id="minutes1">25</p>
+                        <p id="seconds1">00</p>
+                    </div>
+                    <div id="shortContent" class="tabcontent" style="display: none;">
+                        <p id="minutes2">05</p>
+                        <p id="seconds2">00</p>
+                    </div>
+                    <div id="longContent" class="tabcontent" style="display: none;">
+                        <p id="minutes3">15</p>
+                        <p id="seconds3">00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <button id="start" onclick="startTimer()">start</button>
+                <button id="stop" onclick="stopTimer()">pause</button>
+                <button id="reset" onclick="resetTimer()">reset</button><br><br>
+            </div>
+            <div class="adjust">
+                <form action="">
+                    <label for="workTime">Work Length (minutes):</label>
+                    <input id="workTime" type="number" value="25"/><br>
+                    <label for="shortTime">Short Break Length (minutes):</label>
+                    <input id="shortTime" type="number" value="5"/><br>
+                    <label for="longTime">Long Break Time (minutes):</label>
+                    <input id="longTime" type="number" value="15"/><br>
+                </form>
+                <button id="save" onclick="saveButton()">update</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

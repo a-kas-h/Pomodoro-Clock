@@ -1,0 +1,255 @@
+/* Styles for the Pomodoro App */
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2e2b3b;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #1c1a29;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.tabs {
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.panel {
+    display: flex;
+    margin-bottom: 1em;
+    overflow: hidden;
+    background-color: #423e61;
+    border-radius: 99px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 0.75rem;
+    * {
+		z-index: 2;
+	}
+}
+
+.tablinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins";
+    background-color: #423e61;
+    font-size: 1.23rem;
+    font-weight: 500;
+    border: none;
+    padding: 14px 40px;
+    margin: 0 0.5em;
+    cursor: pointer;
+    border-radius: 99px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    transition: color 0.15s ease-in;
+    left: 5px;
+}
+
+.tablinks:hover {
+    background-color: #5c5a7a;
+  }
+
+
+
+input[type="button"] {
+	&:checked {
+		& + label {
+			color: var(--primary-color);
+			& > .notification {
+				background-color: var(--primary-color);
+				color: #fff;
+			}
+		}
+	}
+}
+
+input[id="work"] {
+	&:checked {
+		& ~ .tablinks.active {
+			transform: translateX(0);
+		}
+	}
+}
+
+input[id="short break"] {
+	&:checked {
+		& ~ .tablinks.active {
+			transform: translateX(100%);
+		}
+	}
+}
+
+input[id="long break"] {
+	&:checked {
+		& ~ .tablinks.active {
+			transform: translateX(200%);
+		}
+	}
+}
+
+
+.tablinks.active {
+    background-color: #2e2b3b;
+	display: flex;
+	z-index: 1;
+	border-radius: 99px; 
+	transition: 0.25s ease-out;
+    
+}
+
+.timer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #e74c3c 0%,
+        #e74c3c calc(100% - 100% * (var(--timer-percentage))),
+        #34495e calc(100% - 100% * (var(--timer-percentage))),
+        #34495e 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+}
+
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #2e2b3b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+   
+}
+
+p 
+{ 
+   padding:0px; 
+   margin:0px; 
+} 
+
+.control button {
+    font-family: "Poppins";
+    background-color: #3b3752;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 0.5em 0.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.control button:hover{
+    background-color: #5c5a7a;
+
+}
+
+.adjust {
+    margin-top: 1em;
+}
+
+.adjust form {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.adjust label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #fff;
+    position: relative;
+    left: 30px;
+}
+
+.adjust input {
+    display: block;
+    margin-bottom: 0.5em;
+    width: 100%;
+    padding: 0.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b3752;
+    color: #fff;
+    position: relative;
+    left: 30px;
+}
+
+#save {
+    font-family: "Poppins";
+    background-color: #2e2b3b;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    right: 110px;
+    top: 20px;
+    
+}
+
+#save:hover {
+    background-color: #5c5a7a;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tabcontent p {
+    font-size: 3em;
+}
+
+#workContent {
+    display: block;
+}
